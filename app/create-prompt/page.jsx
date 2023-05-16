@@ -5,7 +5,6 @@ import { useSession } from "next-auth/react";
 import { useRouter } from "next/navigation";
 
 import Form from "@components/Form";
-import { RouteHandlerManager } from "next/dist/server/future/route-handler-managers/route-handler-manager";
 
 const CreatePrompt = () => {
     const router = useRouter();
@@ -33,7 +32,7 @@ const CreatePrompt = () => {
             });
 
             if (res.ok) {
-                Router.push("/");
+                router.push("/");
             }
         } catch (error) {
             console.log(error);
